@@ -1,0 +1,71 @@
+CREATE TABLE `li_bot`.`bot_logs_test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_log` DATETIME NOT NULL DEFAULT CURRENT_DATE(),
+  `time_log` DATETIME NOT NULL DEFAULT CURRENT_TIME(),
+  `inital_price` INT NOT NULL,
+  `final_price` INT NOT NULL,
+  `percent_change` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `timelog_UNIQUE` (`time_log` ASC) VISIBLE);
+
+
+err
+Operation failed: There was an error while applying the SQL script to the database.
+Executing:
+CREATE TABLE `li_bot`.`bot_logs_test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_log` DATETIME NOT NULL DEFAULT CURRENT_DATE(),
+  `time_log` DATETIME NOT NULL DEFAULT CURRENT_TIME(),
+  `inital_price` INT NOT NULL,
+  `final_price` INT NOT NULL,
+  `percent_change` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `timelog_UNIQUE` (`time_log` ASC) VISIBLE);
+
+ERROR 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_DATE(),
+  `time_log` DATETIME NOT NULL DEFAULT CURRENT_TIME(),
+  `inital' at line 3
+SQL Statement:
+CREATE TABLE `li_bot`.`bot_logs_test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_log` DATETIME NOT NULL DEFAULT CURRENT_DATE(),
+  `time_log` DATETIME NOT NULL DEFAULT CURRENT_TIME(),
+  `inital_price` INT NOT NULL,
+  `final_price` INT NOT NULL,
+  `percent_change` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `timelog_UNIQUE` (`time_log` ASC) VISIBLE)
+
+this IS THE ONLY ONE THAT WORKS:
+CREATE TABLE `li_bot`.`bot_logs_test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_log` DATETIME NOT NULL,
+  `time_log` DATETIME NOT NULL,
+  `inital_price` INT NOT NULL,
+  `final_price` INT NOT NULL,
+  `percent_change` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `time_log_UNIQUE` (`time_log` ASC) VISIBLE);
+
+SQL script was successfully applied to the database.
+/*Table: bot_logs_test
+Columns:
+id int AI PK 
+date_log datetime 
+time_log datetime 
+inital_price int 
+final_price int 
+percent_change int*/
+
+const app1 = express()
+
+app1.get("/al", async (req,res0)=>{
+    console.log("a get request")
+    const {data} = await axios.get(url)
+    res0.send(data)
+})
+app1.listen(port, ()=>{
+    console.log("yay our server is connected")
+});
+
+    
